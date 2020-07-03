@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 import { FormsModule } from '@angular/forms';
+//ng2-Char
+import { ChartsModule } from 'ng2-charts';
 
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
@@ -10,6 +12,7 @@ import { PAGES_ROUTES } from './pages.routes';
 
 //Temporal
 import { IncrementorComponent } from '../components/incrementor/incrementor.component';
+import { DoughnutCharComponent } from '../components/incrementor/Graphics/doughnutChar/doughnutChar.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +20,8 @@ import { IncrementorComponent } from '../components/incrementor/incrementor.comp
         DashboardComponent,
         ProgressComponent,
         Graphics1Component,
-        IncrementorComponent
+        IncrementorComponent,
+        DoughnutCharComponent
       ],
       exports: [
         DashboardComponent,
@@ -27,7 +31,8 @@ import { IncrementorComponent } from '../components/incrementor/incrementor.comp
       imports: [
         SharedModule,
         PAGES_ROUTES,
-        FormsModule
+        FormsModule,
+        ChartsModule
       ],
       providers: [],
       bootstrap: []
