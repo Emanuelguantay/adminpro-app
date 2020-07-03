@@ -1,19 +1,18 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-incrementor',
   templateUrl: './incrementor.component.html'
 })
 export class IncrementorComponent implements OnInit {
-  
+
+  @ViewChild('txtProgress') txtProgress: ElementRef;
   @Input() progress: number = 50;
   @Input() legend : string = 'Leyenda';
 
   @Output() emitValue : EventEmitter<number> = new EventEmitter();
 
   constructor() { 
-    console.log("Leyenda", this.legend);
-    console.log("progress", this.progress);
   }
 
   ngOnInit(): void {
@@ -31,6 +30,26 @@ export class IncrementorComponent implements OnInit {
     }
     this.progress = this.progress + number;
     this.emitValue.emit(this.progress);
+    this.txtProgress.nativeElement.focus();
+  }
+
+  onChanges(newValue: number){
+    //let elemHtml: any = document.getElementsByName('progress')[0];
+
+    //console.log(this.txtProgress);
+    if (this.progress >= 100){
+      this.progress = 100;
+    }else if (this.progress <= 0){
+      this.progress = 0;
+    }else{
+      this.progress = newValue;
+    }
+
+    //elemHtml.value = this.progress;
+    this.txtProgress.nativeElement.value = this.progress;
+    this.emitValue.emit(this.progress);
+
+    
   }
 
 }

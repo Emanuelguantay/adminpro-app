@@ -22,7 +22,7 @@ import { IncrementorComponent } from '../components/incrementor/incrementor.comp
       exports: [
         DashboardComponent,
         ProgressComponent,
-        Graphics1Component,
+        Graphics1Component
       ],
       imports: [
         SharedModule,
