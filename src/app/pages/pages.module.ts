@@ -13,6 +13,7 @@ import { PAGES_ROUTES } from './pages.routes';
 //Temporal
 import { IncrementorComponent } from '../components/incrementor/incrementor.component';
 import { DoughnutCharComponent } from '../components/incrementor/Graphics/doughnutChar/doughnutChar.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +22,8 @@ import { DoughnutCharComponent } from '../components/incrementor/Graphics/doughn
         ProgressComponent,
         Graphics1Component,
         IncrementorComponent,
-        DoughnutCharComponent
+        DoughnutCharComponent,
+        AccountSettingsComponent
       ],
       exports: [
         DashboardComponent,
