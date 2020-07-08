@@ -13,7 +13,7 @@ const pagesRoutes: Routes = [
         { path:'dashboard', component: DashboardComponent },
         { path:'progress', component: ProgressComponent },
         { path:'graphics', component: Graphics1Component },
-        { path:'accountsettings', component: AccountSettingsComponent },
+        { path:'account-settings', component: AccountSettingsComponent },
         { path:'', redirectTo:'/dashboard', pathMatch: 'full' },
     ]
     },
