@@ -8,6 +8,8 @@ import { APP_ROUTES } from './app.routes';
 //Modules
 import { PagesModule } from './pages/pages.module';
 
+//Servicios
+import { SettingsService } from './services/settings.service';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +22,7 @@ import { SideBarComponent } from './shared/side-bar/side-bar.component';
 import { BreadcrumbsComponent } from './shared/breadcrumbs/breadcrumbs.component';
 import { PagesComponent } from './pages/pages.component';
 import { RegisterComponent } from './login/register.component';
+
 
 
 
@@ -44,7 +47,7 @@ import { RegisterComponent } from './login/register.component';
     APP_ROUTES,
     FormsModule  
   ],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
